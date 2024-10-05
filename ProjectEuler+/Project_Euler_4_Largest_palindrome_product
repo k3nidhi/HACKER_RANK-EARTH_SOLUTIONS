@@ -1,0 +1,28 @@
+#!/bin/python3
+
+def solve(n):
+    # Initialize the maximum palindrome smaller than n
+    max_palindrome = -1
+    
+    # Loop from 999 down to 100 (three-digit numbers)
+    for i in range(999, 99, -1):
+        for j in range(i, 99, -1):  # Loop downwards for j too
+            product = i * j
+            
+            # If the product is already smaller than max_palindrome, no need to continue
+            if product < max_palindrome:
+                break
+                
+            # Check if product is a palindrome
+            if str(product) == str(product)[::-1] and product < n:
+                max_palindrome = product
+    
+    return max_palindrome
+
+# Read number of test cases
+t = int(input().strip())
+
+# Solve for each test case
+for _ in range(t):
+    n = int(input().strip())
+    print(solve(n))
