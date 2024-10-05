@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import sys
+
+# Read number of test cases
+t = int(input().strip())
+
+# Solve for each test case
+for _ in range(t):
+    n = int(input().strip())
+    
+    # Sum of first n natural numbers
+    sum_of_numbers = n * (n + 1) // 2
+    
+    # Sum of squares of first n natural numbers
+    sum_of_squares = n * (n + 1) * (2 * n + 1) // 6
+    
+    # Square of the sum
+    square_of_sum = sum_of_numbers * sum_of_numbers
+    
+    # Calculate the difference
+    result = square_of_sum - sum_of_squares
+    
+    # Print the result for this test case
+    print(result)
